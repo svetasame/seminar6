@@ -14,7 +14,7 @@ import random
 
 def new_list(msg):
   size = int(input(msg))
-  list = [random.randint(1, 10) for _ in range(size)] 
+  list = [random.randint(-10, 10) for _ in range(size)] 
   return list
 
 def elements(list_1, list_2):
@@ -114,3 +114,59 @@ def find_pairs(list, count=0):
 # выведена только один раз (перестановка чисел новую
 # пару не дает).
 # Ввод: 300 Вывод: 220 284
+
+def summorize(num, sum = 0):
+  for item in range(1, num//2+1):
+    if num % item == 0:
+      sum+= item
+  return sum
+
+# number = int(input("Введите число: "))
+# if number > 10000:
+#   print("Ошибка, число превышает 10 в 5 степени")
+# else:
+#   for i in range(1,10000):
+#     j = summorize(i)
+#     if i < j <= number and i != summorize(j):
+#       print (i,j)
+      
+      
+# Задача 30: Заполните массив элементами арифметической
+# прогрессии. Её первый элемент, разность и количество
+# элементов нужно ввести с клавиатуры. Формула для
+# получения n-го члена прогрессии: a
+# n
+#  = a1
+#  + (n-1) * d.
+# Каждое число вводится с новой строки.
+# Ввод: 7 2 5
+# Вывод: 7 9 11 13 15
+
+# first_number = int(input("Введите первый элемент: "))
+# difference = int(input("Введите разность: "))
+# quality = int(input("Введите количество элементов: "))
+
+# print(*range(first_number, first_number+difference * quality, difference))
+
+# Задача 32: Определить индексы элементов массива (списка),
+# значения которых принадлежат заданному диапазону (т.е. не
+# меньше заданного минимума и не больше заданного
+# максимума)
+# Ввод: [-5, 9, 0, 3, -1, -2, 1,
+# 4, -2, 10, 2, 0, -9, 8, 10, -9,
+# 0, -5, -5, 7]
+# Вывод: [1, 9, 13, 14, 19]
+
+def indexes (list, minimum, maximum):
+  new_list1 = []
+  for i in range (len(list)):
+    if minimum < list[i] < maximum:
+      new_list1.append(i)
+  return new_list1
+
+list1 = new_list("Введите размер списка: ")
+print(list1)
+minn = int(input("Введите диапазон от: "))
+maxx = int(input("Введите диапазон до: "))
+
+print(indexes(list1, minn, maxx))
