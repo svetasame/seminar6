@@ -142,11 +142,11 @@ def summorize(num, sum = 0):
 # Ввод: 7 2 5
 # Вывод: 7 9 11 13 15
 
-# first_number = int(input("Введите первый элемент: "))
-# difference = int(input("Введите разность: "))
-# quality = int(input("Введите количество элементов: "))
+first_number = int(input("Введите первый элемент: "))
+difference = int(input("Введите разность: "))
+quality = int(input("Введите количество элементов: "))
 
-# print(*range(first_number, first_number+difference * quality, difference))
+print(*range(first_number, first_number+difference * quality, difference))
 
 # Задача 32: Определить индексы элементов массива (списка),
 # значения которых принадлежат заданному диапазону (т.е. не
@@ -160,7 +160,7 @@ def summorize(num, sum = 0):
 def indexes (list, minimum, maximum):
   new_list1 = []
   for i in range (len(list)):
-    if minimum < list[i] < maximum:
+    if minimum <= list[i] <= maximum:
       new_list1.append(i)
   return new_list1
 
